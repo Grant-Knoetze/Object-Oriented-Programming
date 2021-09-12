@@ -13,3 +13,17 @@ class DevAsset:
 
 Jake = DevAsset(3000)
 Smith = DevAsset(4000)
+
+# We change the name of the company effectively changing the class variable which affects instances in the DevAsset class.
+
+DevAsset.companyName = "Developer School"
+print(Jake.companyName)
+print(Smith.companyName)
+
+# Here we change the DevAsset Jake instance salary which only affects the Jake instance in the DevAsset class.
+
+Jake.salary = 5000
+print(Jake.salary)
+print(Smith.salary)
+
+
