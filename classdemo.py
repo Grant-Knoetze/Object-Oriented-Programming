@@ -1,41 +1,41 @@
-<<<<<<< HEAD
+# We define a class called Staff
+# A method is a function that exhists inside of a class and has a method
+# self as a parameter.
 
-class Athlete:
-    def __init__ (self, pDiscipline, pName, pExperiencePoints):
-        self.discipline = pDiscipline
+
+class Staff:
+
+    """We define a special method called __inint__ for the class
+    this __inint__ method is known as the initializer of the class
+    it is always named init with two underscores in the front and back
+    Initializer is called whenever an object of the class is created
+    Used to inilialize the variables (i.e. give them initial values) in the class
+    the class
+    Writing an initializer is optional if you do not want to
+    initialize the instance variables when you create the object
+    You can initialize them later."""
+
+    def __init__(self, pPosition, pName, pPay):
+        self.position = pPosition
         self.name = pName
-        self.experiencepoints = pExperiencePoints
-        print('Creating Athlete object')
+        self.pay = pPay
+        print("Creating Staff object")
 
-    def __str__ (self):
-        return "Discipline = %s, Name = %s, ExperiencePoints = %d" %(self.discipline, self.name, self.experiencepoints)
+    """__str__ is another special method commonly included 
+    when coding a class. We use it to return a human readable 
+    string that represents the class"""
 
-    def calculateExperiencePoints(self):
-        prompt = '\nEnter number of hours exercised for %s: ' % (self.name)
+    def __str__(self):
+        return "Position = %s, Name = %s, Pay = %d" % (
+            self.position,
+            self.name,
+            self.pay,
+        )
+
+    def calculatePay(self):
+        prompt = "\nEnter number of hours worked for %s: " % (self.name)
         hours = input(prompt)
-        prompt = 'Enter the hourly EP for %s: ' %(self.name)
-        hourlyPoints = input(prompt)
-        self.experiencepoints = int(hours)*int(hourlyPoints)
-        return self.experiencepoints
-    
-=======
-
-class Athlete:
-    def __init__ (self, pDiscipline, pName, pExperiencePoints):
-        self.discipline = pDiscipline
-        self.name = pName
-        self.experiencepoints = pExperiencePoints
-        print('Creating Athlete object')
-
-    def __str__ (self):
-        return "Discipline = %s, Name = %s, ExperiencePoints = %d" %(self.discipline, self.name, self.experiencepoints)
-
-    def calculateExperiencePoints(self):
-        prompt = '\nEnter number of hours exercised for %s: ' % (self.name)
-        hours = input(prompt)
-        prompt = 'Enter the hourly EP for %s: ' %(self.name)
-        hourlyPoints = input(prompt)
-        self.experiencepoints = int(hours)*int(hourlyPoints)
-        return self.experiencepoints
-    
->>>>>>> 45d75e193b7f93c0abb1c6c4a447f2c346f37743
+        prompt = "Enter the hourly rate for %s: " % (self.name)
+        hourlyRate = input(prompt)
+        self.pay = int(hours) * int(hourlyRate)
+        return self.pay
