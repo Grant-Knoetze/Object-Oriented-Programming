@@ -1,15 +1,13 @@
-
 # To demonstrate how properties work we add one to the variable position
 # to ensure that it can only be set to 'Basic' or 'Manager'
 
 class Staff:
 
     def __init__(self, pPosition, pName, pPay):
-        self._position = pPosition # Change to _position to signal other programmers not to touch variable
+        self._position = pPosition  # Change to _position to signal other programmers not to touch variable
         self.name = pName
         self.pay = pPay
         print("Creating Staff object")
-
 
     """__str__ is another special method commonly included 
     when coding a class. We use it to return a human readable 
@@ -41,6 +39,3 @@ class Staff:
         hourlyRate = input(prompt)
         self.pay = int(hours) * int(hourlyRate)
         return self.pay
-
-
-            
